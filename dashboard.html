@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Handmade Collection Hub</title>
+    <link rel="stylesheet" href="seller-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <div id="header">
+        <a href="seller-home.html" id="logo-link">
+            <img src="logo.jpg" alt="Handmade Collection Hub Logo" id="logo">
+        </a>
+        <h1><a href="seller-home.html" id="title-link">Handmade Collection Hub</a></h1>
+        <div id="navButtons">
+            <a href="seller-home.html" class="nav-button" id="home-link">Home</a>
+            <a href="dashboard.html" class="nav-button" id="dashboard-link">Dashboard</a>
+            <a href="seller-product.html" class="nav-button" id="product-list-link">Product List</a>
+            <a href="seller-profile.html" class="nav-button" id="profile-link">Profile</a>
+            <a href="login.html" class="nav-button" id="logout-link">Logout</a>
+        </div>
+        <button id="themeToggle" aria-label="Toggle Theme"></button>
+    </div>
+    
+
+    <!-- Dashboard Section -->
+    <section id="dashboardSection">
+        <!-- Content Box for Title and List -->
+        <div id="contentBox">
+            <h2>Inventory Dashboard</h2>
+            <ul>
+                <li id="total-products">Total Products: 0</li>
+                <li id="total-stock">Total Stock: 0</li>
+                <li id="categories">Categories: 0</li>
+            </ul>
+        </div>
+    
+        <!-- Canvas elements for charts -->
+        <div id="chartsContainer">
+            <canvas id="productCategoryChart" class="chart-canvas"></canvas>
+        </div>
+    </section>
+    
+    <script src="seller-scripts.js"></script>
+    
+</body>
+</html>

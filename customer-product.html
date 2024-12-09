@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List - Handmade Collection Hub</title>
+    <link rel="stylesheet" href="customer-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <div id="header">
+        <a href="home.html" id="logo-link">
+            <img src="logo.jpg" alt="Handmade Collection Hub Logo" id="logo">
+        </a>
+        <h1><a href="customer-home.html" id="title-link">Handmade Collection Hub</a></h1>
+        <div id="navButtons">
+            <a href="customer-home.html" class="nav-button" id="home-link">Home</a>
+            <a href="customer-product.html" class="nav-button" id="product-list-link">Product List</a>
+            <a href="about.html" class="nav-button" id="about-link">About Us</a>
+            <a href="contact.html" class="nav-button" id="contact-link">Contact</a>
+            <a href="login.html" class="nav-button" id="login-link">Logout</a>
+        </div>
+        <button id="themeToggle" aria-label="Toggle Theme"></button>
+    </div>
+    
+    <!-- Product List Section -->
+    <section id="productListSection">
+        <h2>Our Products</h2>
+        <div class="filters">
+            <input id="search-bar" type="text" placeholder="Search by name...">
+            <select id="filter-category">
+                <option value="all">All Categories</option>
+                <option value="baby">Baby Scrunchie</option>
+                <option value="regular">Regular Scrunchie</option>
+                <option value="giant">Giant Scrunchie</option>
+            </select>
+            <select id="filter-stock">
+                <option value="none">Sort by Stock</option>
+                <option value="low-to-high">Lowest to Highest</option>
+                <option value="high-to-low">Highest to Lowest</option>
+            </select>
+        </div>
+        <div id="product-list" class="product-grid"></div>
+    </section>
+    <script src="customer-scripts.js"></script>
+</body>
+</html>

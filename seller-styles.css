@@ -1,0 +1,809 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Theme Variables */
+:root {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --header-bg: #000000;
+    --header-text: #b12252;
+    --primary-color: #b12252;
+    --secondary-color: #ff81ab;
+    --button-hover-bg: #5e0724;
+    --footer-bg: #b12252;
+    --table-hover-bg: #cfcece;
+    --box-color: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark Theme Variables */
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --header-bg: #333333;
+    --header-text: #ff81ab;
+    --primary-color: #ff81ab;
+    --secondary-color: #b12252;
+    --button-hover-bg: #ff3366;
+    --footer-bg: #222;
+    --table-hover-bg: #292828;
+    --box-color: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Body and Main Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header with title and navigation */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 13px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Header with title and navigation */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 13px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Title */
+#header h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin: 0;
+    white-space: nowrap; /* Prevent title from wrapping */
+    flex-grow: 1; /* Allow title to take up remaining space */
+    overflow: hidden; /* Hide any overflow */
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+    max-width: 75%; /* Adjust width to fit, leave space for logo and nav */
+}
+
+/* Logo */
+#logo {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Ensure the height matches the width */
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits within the circle */
+    margin-right: 10px; /* Optional: space between logo and text */
+}
+
+/* Logo link */
+#logo-link {
+    display: flex;
+    align-items: center;
+}
+
+/* Title link */
+#title-link {
+    text-decoration: none;
+    color: var(--header-text);
+}
+
+#title-link:visited {
+    color: var(--header-text);
+}
+
+#title-link:hover {
+    text-decoration: none;
+}
+
+/* Navigation Buttons */
+#navButtons {
+    display: flex;
+    gap: 15px; /* Space between navigation items */
+    justify-content: flex-end; /* Align buttons to the right */
+    width: auto; /* Allow it to shrink and fit the space */
+    margin-right: 5px;
+}
+
+#navButtons a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 0.8rem; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    padding: 10px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+#navButtons a:hover { 
+    background-color: var(--primary-color); 
+}
+
+#navButtons a.active { 
+    background-color: var(--primary-color); 
+}
+
+@media (max-width: 768px) {
+    #navButtons {
+        flex-direction: row; /* Stack buttons vertically */
+        align-items: flex-start; /* Align buttons to the left */
+        width: 100%;
+    }
+
+    #navButtons a {
+        margin-bottom: 0px; /* Add space between stacked items */
+    }
+}
+
+
+
+/* Home Section */
+#homeSection {
+    padding: 50px 10px;
+    background-color: var(--bg-color);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    box-shadow: var(--box-color);
+    margin-top: 50px;
+    position: relative;
+}
+
+#homeSection h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+#homeSection p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+/* Image Slider Styles */
+.slider {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 1s ease-in-out;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    11.11% {
+        transform: translateX(-100%);
+    }
+    22.22% {
+        transform: translateX(-200%);
+    }
+    33.33% {
+        transform: translateX(-300%);
+    }
+    44.44% {
+        transform: translateX(-400%);
+    }
+    55.55% {
+        transform: translateX(-500%);
+    }
+    66.66% {
+        transform: translateX(-600%);
+    }
+    77.77% {
+        transform: translateX(-700%);
+    }
+    88.88% {
+        transform: translateX(-800%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slider-track {
+    animation: slide 27s infinite;
+}
+
+/* Dashboard Section */
+#dashboardSection {
+    padding: 40px 20px 20px;
+    display: flex;
+    justify-content: center; /* Center the entire content */
+    align-items: flex-start; /* Align the items at the top */
+    flex-wrap: wrap;
+    background-color: var(--bg-color);
+    box-shadow: var(--box-color);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: left;
+}
+
+/* Content Box */
+#contentBox {
+    background-color: var(--box-color); /* Background color for the box */
+    padding: 20px;
+    border-radius: 10px; /* Optional: rounded corners for the box */
+    box-shadow: var(--box-color);
+    width: 100%; /* Make sure it uses the available width */
+    max-width: 300px; /* Limit the maximum width */
+    margin-top: 120px;
+    margin-right: 30px; /* Add space between the content and charts */
+}
+
+/* Title (h2) */
+#contentBox h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px; /* Reduced margin for better alignment */
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* List */
+#contentBox ul {
+    list-style: none;
+    font-size: 1rem;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+/* List items */
+#contentBox li {
+    margin: 10px 0; /* Add space between items */
+}
+
+/* Charts Container */
+#chartsContainer {
+    display: flex;
+    flex-direction: column; /* Stack the charts vertically */
+    gap: 20px; /* Add space between the charts */
+}
+
+/* Chart */
+.chart-canvas {
+    width: 100%; /* Ensure the chart fills the available space */
+    height: 400px !important;
+    max-width: 400px; /* Set max width for the chart */
+}
+
+/* Product List Section */
+#productListSection {
+    padding: 30px 20px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: var(--box-color);
+    position: relative;
+}
+
+#productListSection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* Filters Section */
+#productListSection .filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#productListSection .filters input,
+#productListSection .filters select {
+    padding: 7px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 4px solid #ddd;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    width: auto;
+}
+
+/* Add Product Button */
+.add-product-btn {
+    padding: 7px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    height: 40px;
+}
+
+.add-product-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Product Table Container */
+#productListSection .table-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Product Table */
+#productListSection table {
+    width: 80%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+    border: 5px solid var(--primary-color);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+table th {
+    background-color: var(--primary-color);
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+table td {
+    background-color: var(--bg-color);
+    transition: background-color 0.3s ease;
+}
+
+table tr:hover td {
+    background-color: var(--table-hover-bg);
+}
+
+table img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* Product Actions Buttons */
+button.edit-btn,
+button.delete-btn {
+    padding: 5px 15px;
+    margin: 5px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button.edit-btn:hover,
+button.delete-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+button.delete-btn {
+    background-color: var(--secondary-color);
+}
+
+button.delete-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: 6% auto;
+    padding: 20px 15px;
+    border: 1px solid #888;
+    width: 500px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: var(--box-color);
+}
+
+/* Removed .close-button since it's no longer used */
+
+#modal-title {
+   font-size: 1.5rem; 
+   margin-left: 15px;
+   color: var(--primary-color); 
+}
+/* Product Form Inputs */
+#product-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+}
+
+#product-form input,
+#product-form select {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Profile Section */
+#profileSection {
+    padding: 50px 20px;
+    background-color: var(--bg-color);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.profile-details h3, .profile-details p {
+    margin: 10px 0;
+}
+
+.social-media-links {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media-links li {
+    margin: 5px 0;
+}
+
+.social-media-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-media-links a:hover {
+    color: var(--secondary-color);
+}
+
+#edit-profile-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#edit-profile-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Profile Modal */
+#profile-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#profile-modal .modal-content {
+    background-color: var(--bg-color);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: var(--box-color);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: var(--box-color);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cancel-button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+#edit-profile-form input,
+#edit-profile-form select {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#image-preview-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+.remove-image-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: red;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Image Preview Container */
+#image-preview-container {
+    position: relative; /* To position the remove-image-icon absolutely */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    border: 2px dashed #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#image-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Remove Image Icon */
+.remove-image-icon {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(0,0,0,0.6);
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-image-icon:hover {
+    background-color: var(--primary-color);
+}
+
+/* Modal Buttons Container */
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1px;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+/* Distinct Styles for Cancel and Add Buttons */
+.cancel-button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.cancel-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.add-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 40px;
+
+}
+
+.add-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+
+/* Removed #remove-image-button styling since it's no longer used */
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--footer-bg);
+    color: rgb(255, 255, 255);
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Theme Toggle Button with Icon */
+#themeToggle {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#themeToggle:hover {
+    background-color: var(--primary-color);
+}
+
+/* Dark Theme Icon Styles */
+body.dark-theme #themeToggle::before {
+    content: "\f186";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Light Theme Icon Styles */
+#themeToggle::before {
+    content: "\f185";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    #productListSection table {
+        width: 100%;
+    }
+
+    #productListSection .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}

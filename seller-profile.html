@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile - Handmade Collection Hub</title>
+    <link rel="stylesheet" href="seller-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <div id="header">
+        <a href="seller-home.html" id="logo-link">
+            <img src="logo.jpg" alt="Handmade Collection Hub Logo" id="logo">
+        </a>
+        <h1><a href="seller-home.html" id="title-link">Handmade Collection Hub</a></h1>
+        <div id="navButtons">
+            <a href="seller-home.html" class="nav-button" id="home-link">Home</a>
+            <a href="dashboard.html" class="nav-button" id="dashboard-link">Dashboard</a>
+            <a href="seller-product.html" class="nav-button" id="product-list-link">Product List</a>
+            <a href="seller-profile.html" class="nav-button" id="profile-link">Profile</a>
+            <a href="login.html" class="nav-button" id="logout-link">Logout</a>
+        </div>
+        <button id="themeToggle" aria-label="Toggle Theme"></button>
+    </div>
+
+    <!-- Admin Profile Section -->
+    <section id="profileSection">
+        <h2>Admin Profile</h2>
+        <div class="profile-container">
+            <img src="Honeylene.jpg" alt="Admin Photo" class="profile-pic" id="profile-pic">
+            <div class="profile-details" id="profile-details">
+                <h3 id="profile-name">Name: Honeylene Papio</h3>
+                <p id="profile-age">Age: 27</p>
+                <p id="profile-address">Address: 017 Handmade Lane, Craftsville, Sabang, Ibaan, Batangas, Philippines</p>
+                <p>Contacts:</p>
+                <ul class="social-media-links">
+                    <li><a href="https://www.facebook.com/neylllllll" target="_blank" id="profile-facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.twitter.com/admin" target="_blank" id="profile-twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com/admin" target="_blank" id="profile-instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+                <button id="edit-profile-btn" onclick="showEditProfileForm()">Edit Profile</button>
+            </div>
+            <!-- Edit Profile Form -->
+            <div id="profile-modal" class="modal">
+                <div class="modal-content">
+                    <h2 id="modal-title">Edit Profile</h2>
+                    <form id="edit-profile-form">
+                        <input id="edit-name" type="text" placeholder="Name" required>
+                        <input id="edit-age" type="number" placeholder="Age" required>
+                        <input id="edit-address" type="text" placeholder="Address" required>
+                        <input id="edit-facebook" type="text" placeholder="Facebook URL" required>
+                        <input id="edit-twitter" type="text" placeholder="Twitter URL" required>
+                        <input id="edit-instagram" type="text" placeholder="Instagram URL" required>
+                        <input id="edit-photo" type="file" accept="image/*">
+                        
+                        <div id="image-preview-container">
+                            <img id="image-preview" src="#" alt="Image Preview" style="display: none;"/>
+                            <span id="remove-image-icon" class="remove-image-icon" style="display:none;">&times;</span>
+                        </div>
+                        
+                        <div class="modal-buttons">
+                            <button type="button" id="modal-cancel-button" class="cancel-button">Cancel</button>
+                            <button type="submit" id="modal-submit-button" class="add-button">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="seller-scripts.js"></script>
+</body>
+</html>
