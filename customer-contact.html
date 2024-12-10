@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Handmade Collection Hub</title>
+    <link rel="stylesheet" href="customer-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div id="header">
+        <a href="customer-home.html" id="logo-link">
+            <img src="logo.jpg" alt="Handmade Collection Hub Logo" id="logo">
+        </a>
+        <h1><a href="customer-home.html" id="title-link">Handmade Collection Hub</a></h1>
+        <div id="navButtons">
+            <a href="customer-home.html" class="nav-button" id="home-link">Home</a>
+            <a href="customer-product.html" class="nav-button" id="product-list-link">Product List</a>
+            <a href="customer-about.html" class="nav-button" id="about-link">About Us</a>
+            <a href="customer-contact.html" class="nav-button active" id="contact-link">Contact</a>
+            <a href="login.html" class="nav-button" id="login-link">Login</a>
+        </div>
+        <button id="themeToggle" aria-label="Toggle Theme"></button>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contactSection">
+        <h2>Contact Us</h2>
+        <div class="profile-container">
+            <img src="Honeylene.jpg" alt="Admin Photo" class="profile-pic" id="profile-pic">
+            <div class="profile-details" id="profile-details">
+                <h3 id="profile-name">Name: Honeylene Papio</h3>
+                <p id="profile-address">Address: 017 Handmade Lane, Craftsville, Sabang, Ibaan, Batangas, Philippines</p>
+                <p>Contacts:</p>
+                <ul class="social-media-links">
+                    <li><a href="https://www.facebook.com/neylllllll" target="_blank" id="profile-facebook"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="https://www.twitter.com/admin" target="_blank" id="profile-twitter"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://www.instagram.com/admin" target="_blank" id="profile-instagram"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form id="contactForm" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <script src="scripts.js"></script>
+
+</body>
+</html>

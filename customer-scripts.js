@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         applyFilters();
 
         // Attach event listeners for filters
-        searchBar?.addEventListener("input", applyFilters);
-        filterCategory?.addEventListener("change", applyFilters);
-        filterStock?.addEventListener("change", applyFilters);
+        document.getElementById("search-bar")?.addEventListener("input", applyFilters);
+        document.getElementById("filter-category")?.addEventListener("change", applyFilters);
+        document.getElementById("filter-price")?.addEventListener("change", applyFilters);
     }
 
     // JavaScript to handle active nav button
@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Fetch products from localStorage
 function fetchProducts() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
-    window.filteredProducts = products; // Store products globally for filtering
+    window.originalProducts = products; // Store original products globally for filtering
+    window.filteredProducts = [...products]; // Copy products for filtering
     applyFilters();
 }
 
@@ -56,18 +57,18 @@ function fetchProducts() {
 function applyFilters() {
     const searchQuery = document.getElementById("search-bar")?.value.toLowerCase() || "";
     const categoryFilterValue = document.getElementById("filter-category")?.value || "all";
-    const stockFilterValue = document.getElementById("filter-stock")?.value || "none";
+    const priceFilterValue = document.getElementById("filter-price")?.value || "none";
 
-    window.filteredProducts = window.filteredProducts.filter(product => {
+    window.filteredProducts = window.originalProducts.filter(product => {
         const matchesSearch = product.name.toLowerCase().includes(searchQuery);
         const matchesCategory = categoryFilterValue === "all" || product.category === categoryFilterValue;
         return matchesSearch && matchesCategory;
     });
 
-    if (stockFilterValue === "low-to-high") {
-        window.filteredProducts.sort((a, b) => a.stock - b.stock);
-    } else if (stockFilterValue === "high-to-low") {
-        window.filteredProducts.sort((a, b) => b.stock - a.stock);
+    if (priceFilterValue === "low-to-high") {
+        window.filteredProducts.sort((a, b) => a.price - b.price);
+    } else if (priceFilterValue === "high-to-low") {
+        window.filteredProducts.sort((a, b) => b.price - a.price);
     }
 
     renderProductList();
