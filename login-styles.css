@@ -33,6 +33,13 @@ body.dark-theme {
     --box-color: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+/* Body and Main Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
 /* Login Page */
 #login {
     display: flex;

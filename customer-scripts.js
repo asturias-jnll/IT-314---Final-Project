@@ -43,7 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('activeNavId', this.id);
         });
     });
+
 });
+
+
 
 // Fetch products from localStorage
 function fetchProducts() {

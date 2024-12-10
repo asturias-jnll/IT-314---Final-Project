@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
-
+    
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             username: 'customer',
             password: 'customerpass'
         };
+
 
         if (username === adminCredentials.username && password === adminCredentials.password) {
             window.location.href = 'seller-home.html'; // Redirect to seller home page

@@ -51,19 +51,6 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-}
-
-/* Header with title and navigation */
-#header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--header-bg);
-    color: var(--header-text);
-    padding: 13px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
     width: 100%;
     box-sizing: border-box;
 }
@@ -115,7 +102,7 @@ body {
     gap: 15px; /* Space between navigation items */
     justify-content: flex-end; /* Align buttons to the right */
     width: auto; /* Allow it to shrink and fit the space */
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 #navButtons a { 
@@ -149,19 +136,27 @@ body {
     }
 }
 
-
-
 /* Home Section */
 #homeSection {
-    padding: 50px 10px;
+    padding: 50px 150px;
     background-color: var(--bg-color);
-    text-align: center;
+    text-align: left;
     background-size: cover;
     background-position: center;
     color: var(--text-color);
     box-shadow: var(--box-color);
     margin-top: 50px;
     position: relative;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Center the entire section */
+    flex-wrap: wrap; /* Ensures proper layout on smaller screens */
+}
+
+#homeSection .content {
+    max-width: 60%; /* Limit the width for alignment */
+    text-align: left; /* Align text to the left */
+    padding-right: 20px; /* Add some spacing between content and slider */
 }
 
 #homeSection h2 {
@@ -173,9 +168,20 @@ body {
 
 #homeSection p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     line-height: 1.5;
     color: var(--text-color);
+}
+
+/* Slider Section */
+#homeSection .slider {
+    width: 50%; /* Take half the width */
+    max-width: 400px; /* Limit the slider's width */
+    height: 400px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-left: 25px;
 }
 
 /* Image Slider Styles */
@@ -239,7 +245,7 @@ body {
 
 /* Dashboard Section */
 #dashboardSection {
-    padding: 40px 20px 20px;
+    padding: 40px 20px 40px;
     display: flex;
     justify-content: center; /* Center the entire content */
     align-items: flex-start; /* Align the items at the top */
@@ -479,181 +485,6 @@ button.delete-btn:hover {
     color: var(--text-color);
 }
 
-/* Profile Section */
-#profileSection {
-    padding: 50px 20px;
-    background-color: var(--bg-color);
-    text-align: center;
-    color: var(--text-color);
-}
-
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--primary-color);
-}
-
-.profile-details h3, .profile-details p {
-    margin: 10px 0;
-}
-
-.social-media-links {
-    list-style: none;
-    padding: 0;
-}
-
-.social-media-links li {
-    margin: 5px 0;
-}
-
-.social-media-links a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-}
-
-.social-media-links a:hover {
-    color: var(--secondary-color);
-}
-
-#edit-profile-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-#edit-profile-btn:hover {
-    background-color: var(--button-hover-bg);
-}
-
-/* Profile Modal */
-#profile-modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-#profile-modal .modal-content {
-    background-color: var(--bg-color);
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: var(--box-color);
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: var(--bg-color);
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: var(--box-color);
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.cancel-button {
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.cancel-button:hover {
-    background-color: var(--button-hover-bg);
-}
-
-.add-button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-button:hover {
-    background-color: var(--button-hover-bg);
-}
-
-#edit-profile-form input,
-#edit-profile-form select {
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 1rem;
-    width: 100%;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-}
-
-#image-preview-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
-
-#image-preview {
-    max-width: 100px;
-    max-height: 100px;
-    border-radius: 5px;
-}
-
-.remove-image-icon {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    color: red;
-    cursor: pointer;
-    font-size: 1.5rem;
-}
-
 /* Image Preview Container */
 #image-preview-container {
     position: relative; /* To position the remove-image-icon absolutely */
@@ -681,7 +512,6 @@ button.delete-btn:hover {
     position: absolute;
     top: 5px;
     right: 5px;
-    background-color: rgba(0,0,0,0.6);
     color: #fff;
     width: 25px;
     height: 25px;
@@ -694,7 +524,7 @@ button.delete-btn:hover {
 }
 
 .remove-image-icon:hover {
-    background-color: var(--primary-color);
+    background-color: var(--button-hover-bg);
 }
 
 /* Modal Buttons Container */
@@ -734,7 +564,217 @@ button.delete-btn:hover {
     cursor: pointer;
     transition: background-color 0.3s ease;
     height: 40px;
+    margin-top: 10px;
 
+}
+
+.add-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+
+/* Profile Section */
+#profileSection {
+    padding: 80px 20px;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    box-shadow: var(--box-color);
+    position: relative;
+}
+    
+
+.profile-container {
+    display: flex; /* Flexbox for side-by-side layout */
+    align-items: center; /* Align items vertically */
+    gap: 20px; /* Space between profile picture and details */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Profile Picture and H2 */
+.profile-image-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack image and h2 vertically */
+    align-items: center; /* Center-align image and h2 */
+}
+
+.profile-pic {
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 15px;
+
+}
+
+.profile-image-wrapper h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.profile-details p {
+    margin: 10px 0;
+    text-align: left;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.social-media-links {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.social-media-links li {
+    margin: 5px 0;
+}
+
+.social-media-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-media-links a:hover {
+    color: var(--secondary-color);
+}
+
+#edit-profile-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-left: 50px;
+}
+
+#edit-profile-btn:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Profile Modal */
+#profile-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#profile-modal .modal-content {
+    background-color: var(--bg-color);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: var(--box-color);
+}
+
+#edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px;
+}
+
+#edit-profile-form input,
+#edit-profile-form select {
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+#image-preview-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 5px;
+}
+
+.remove-image-icon {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid var(--primary-color);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: var(--box-color);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel-button {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.add-button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .add-button:hover {

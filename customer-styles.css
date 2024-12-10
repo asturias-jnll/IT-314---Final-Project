@@ -102,7 +102,7 @@ body {
     gap: 15px;
     justify-content: flex-end;
     width: auto;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 #navButtons a { 
@@ -138,29 +138,52 @@ body {
 
 /* Home Section */
 #homeSection {
-    padding: 50px 10px;
+    padding: 50px 210px;
     background-color: var(--bg-color);
-    text-align: center;
+    text-align: left;
     background-size: cover;
     background-position: center;
     color: var(--text-color);
     box-shadow: var(--box-color);
     margin-top: 50px;
     position: relative;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Center the entire section */
+    flex-wrap: wrap; /* Ensures proper layout on smaller screens */
+}
+
+#homeSection .content {
+    max-width: 50%; /* Limit the width for alignment */
+    text-align: left; /* Align text to the left */
+    padding-right: 20px; /* Add some spacing between content and slider */
 }
 
 #homeSection h2 {
-    font-size: 2rem;
+    font-size: 2.7rem;
     font-weight: bold;
     margin-bottom: 10px;
-    color: var(--text-color);
+    color: var(--primary-color);
+    font-family: 'Lucida Calligraphy', cursive;
 }
 
 #homeSection p {
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     line-height: 1.5;
     color: var(--text-color);
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Slider Section */
+#homeSection .slider {
+    width: 50%; /* Take half the width */
+    max-width: 400px; /* Limit the slider's width */
+    height: 400px;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-left: 25px;
 }
 
 /* Image Slider Styles */
@@ -222,37 +245,56 @@ body {
     animation: slide 27s infinite;
 }
 
-/* Add this to your existing CSS */
+/* Product List Section */
+#productListSection {
+    padding: 40px 20px 40px;
+    background-color: var(--bg-color);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    box-shadow: var(--box-color);
+    margin-top: 50px;
+    position: relative;
+}
+
+#productListSection h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
 
 /* Product Grid */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     justify-content: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 /* Individual Product Card */
 .product-card {
     background-color: var(--bg-color);
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: var(--box-color);
     overflow: hidden;
-    width: 200px;
+    width: 170px;
     text-align: center;
     transition: transform 0.3s;
+    border: 2px solid var(--primary-color);
 }
 
 .product-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
+    height: 170px;
     object-fit: cover;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--primary-color);
 }
 
 .product-card h3 {
@@ -309,62 +351,6 @@ body {
     width: auto;
 }
 
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: var(--bg-color);
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid var(--primary-color);
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: var(--box-color);
-}
-
-.modal-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-.cancel-button {
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.cancel-button:hover {
-    background-color: var(--button-hover-bg);
-}
-
-.add-button {
-    padding: 10px 20px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.add-button:hover {
-    background-color: var(--button-hover-bg);
-}
-
 /* Responsive Styles */
 @media screen and (max-width: 600px) {
     .modal-content {
@@ -381,22 +367,45 @@ body {
     }
 }
 
+/* About Section */
+#aboutSection {
+    padding: 40px 20px 40px;
+    background-color: var(--bg-color);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    box-shadow: var(--box-color);
+    margin-top: 50px;
+    position: relative;
+    line-height: 35px;
+}
+
+#aboutSection h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
 /* Contact Section Styling */
 #contactSection {
+    padding: 40px 20px 40px;
     background-color: var(--bg-color);
+    text-align: center;
+    background-size: cover;
+    background-position: center;
     color: var(--text-color);
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
     box-shadow: var(--box-color);
-    border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 50px;
+    position: relative;
 }
 
 #contactSection h2 {
-    text-align: center;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 30px;
     color: var(--primary-color);
+    text-align: center;
 }
 
 .profile-container {
@@ -413,16 +422,16 @@ body {
     height: 150px;
     border-radius: 50%;
     border: 3px solid var(--primary-color);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .profile-details {
     text-align: center;
 }
 
-.profile-details h3, .profile-details p {
+.profile-details p {
     margin-bottom: 10px;
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 
 .social-media-links {
@@ -439,37 +448,87 @@ body {
 .social-media-links a {
     color: var(--primary-color);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 #contactForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    width: 70%;
+    max-width: 700px;
+    align-items: center; /* Center child elements horizontally */
+    margin: 0 auto; /* Ensure the form is centered horizontally in its container */
+    padding: 20px; /* Optional: Padding for inner spacing */
+    background-color: var(--box-color); /* Optional: Background for the form */
+    border: var(--primary-color); /* Optional: Border for form visibility */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: var(--box-color); /* Optional: Shadow for aesthetics */
 }
 
 #contactForm label {
     font-weight: bold;
     color: var(--primary-color);
+    text-align: center; /* Center-align text */
 }
 
 #contactForm input, #contactForm textarea {
+    width: 100%; /* Make inputs stretch to full width of the form */
+    max-width: 600px; /* Limit input width for consistency */
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--table-hover-bg);
     border-radius: 5px;
     font-size: 1rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 #contactForm button {
-    padding: 10px;
+    padding: 10px 20px; /* Add horizontal padding for better button look */
     background-color: var(--primary-color);
     color: white;
     border: none;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    text-align: center;
 }
 
 #contactForm button:hover {
     background-color: var(--button-hover-bg);
+}
+
+/* Theme Toggle Button with Icon */
+#themeToggle {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#themeToggle:hover {
+    background-color: var(--primary-color);
+}
+
+/* Dark Theme Icon Styles */
+body.dark-theme #themeToggle::before {
+    content: "\f186";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* Light Theme Icon Styles */
+#themeToggle::before {
+    content: "\f185";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
