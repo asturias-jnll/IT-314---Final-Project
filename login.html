@@ -17,18 +17,30 @@
             <div class="header">
                 <h1>Handmade Collection Hub</h1>
             </div>
-            <!-- Login Form -->
-            <div class="login-form">
-                <form id="loginForm" method="POST">
-                    <input type="text" id="username" placeholder="Username" required>
-                    <input type="password" id="password" placeholder="Password" required>
+            <!-- Login Choice -->
+            <div class="login-choice">
+                <button id="customerLoginButton">Customer Login</button>
+                <button id="sellerLoginButton">Seller Login</button>
+            </div>
+            <!-- Login Forms -->
+            <div class="login-forms hidden" id="customerLogin">
+                <h2>Customer Login</h2>
+                <form id="customerLoginForm" method="POST">
+                    <input type="text" id="customerUsername" placeholder="Customer Username" required>
+                    <input type="password" id="customerPassword" placeholder="Customer Password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div class="login-forms hidden" id="sellerLogin">
+                <h2>Seller Login</h2>
+                <form id="sellerLoginForm" method="POST">
+                    <input type="text" id="sellerUsername" placeholder="Seller Username" required>
+                    <input type="password" id="sellerPassword" placeholder="Seller Password" required>
                     <button type="submit">Login</button>
                 </form>
             </div>
         </div>
     </div>
-
     <script src="login-scripts.js"></script>
-
 </body>
 </html>
