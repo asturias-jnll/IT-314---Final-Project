@@ -89,7 +89,7 @@ function renderProductList() {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>${product.category}</p>
-            <p class="price">$${product.price.toFixed(2)}</p>
+            <p class="price">₱${product.price.toFixed(2)}</p>
             <button class="buy-btn">Buy Now</button>
         `;
         productList.appendChild(productCard);

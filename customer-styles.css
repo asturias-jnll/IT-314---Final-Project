@@ -65,6 +65,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 75%;
+    font-family: 'Dancing Script', cursive;
 }
 
 /* Logo */

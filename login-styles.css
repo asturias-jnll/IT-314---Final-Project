@@ -67,6 +67,7 @@ body {
     color: var(--primary-color);
     margin-bottom: 10px;
     text-align: center;
+    font-family: 'Dancing Script', cursive;
 }
 
 .login-form {

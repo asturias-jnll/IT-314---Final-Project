@@ -65,6 +65,7 @@ body {
     overflow: hidden; /* Hide any overflow */
     text-overflow: ellipsis; /* Add ellipsis if text overflows */
     max-width: 75%; /* Adjust width to fit, leave space for logo and nav */
+    font-family: 'Dancing Script', cursive;
 }
 
 /* Logo */
@@ -572,6 +573,21 @@ button.delete-btn:hover {
     background-color: var(--button-hover-bg);
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+    }
+
+    #productListSection table {
+        width: 100%;
+    }
+
+    #productListSection .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 /* Profile Section */
 #profileSection {
@@ -830,20 +846,4 @@ body.dark-theme #themeToggle::before {
     content: "\f185";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 600px) {
-    .modal-content {
-        width: 90%;
-    }
-
-    #productListSection table {
-        width: 100%;
-    }
-
-    #productListSection .filters {
-        flex-direction: column;
-        align-items: center;
-    }
 }
