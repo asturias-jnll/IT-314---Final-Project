@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const themeToggleBtn = document.getElementById('themeToggle');
+
+    // Load saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+    }
+
+    // Toggle theme and icon
+    themeToggleBtn.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : '';
+        localStorage.setItem('theme', currentTheme);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.getElementById('loginForm');
-    
+
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
