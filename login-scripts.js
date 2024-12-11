@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark Theme Toggle
     const body = document.body;
     const themeToggleBtn = document.getElementById('themeToggle');
 
@@ -9,42 +10,86 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Toggle theme and icon
-    themeToggleBtn.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-        const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : '';
-        localStorage.setItem('theme', currentTheme);
-    });
-});
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const currentTheme = body.classList.contains('dark-theme') ? 'dark-theme' : '';
+            localStorage.setItem('theme', currentTheme);
+        });
+    }
 
+    // Login Choice Buttons
+    const customerLoginButton = document.getElementById('customerLoginButton');
+    const sellerLoginButton = document.getElementById('sellerLoginButton');
+    const customerLogin = document.getElementById('customerLogin');
+    const sellerLogin = document.getElementById('sellerLogin');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
+    // Check if login choice buttons exist
+    if (customerLoginButton && sellerLoginButton) {
+        // Show Customer Login
+        customerLoginButton.addEventListener('click', () => {
+            customerLogin.classList.remove('hidden');
+            sellerLogin.classList.add('hidden');
+            console.log('Customer login form displayed.');
+        });
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault();
+        // Show Seller Login
+        sellerLoginButton.addEventListener('click', () => {
+            sellerLogin.classList.remove('hidden');
+            customerLogin.classList.add('hidden');
+            console.log('Seller login form displayed.');
+        });
+    } else {
+        console.error('Login choice buttons not found.');
+    }
 
-        const username = document.getElementById('username').value.trim();
-        const password = document.getElementById('password').value.trim();
+    // Customer Login Form
+    const customerLoginForm = document.getElementById('customerLoginForm');
+    if (customerLoginForm) {
+        customerLoginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.getElementById('customerUsername').value.trim();
+            const password = document.getElementById('customerPassword').value.trim();
 
-        // admin/seller credentials
-        const adminCredentials = {
-            username: 'selleradmin',
-            password: 'sellerpass'
-        };
+            // Hardcoded customer credentials for demo purposes
+            const customerCredentials = {
+                username: 'customer',
+                password: 'customerpass'
+            };
 
-        // customer credentials
-        const customerCredentials = {
-            username: 'customer',
-            password: 'customerpass'
-        };
+            if (username === customerCredentials.username && password === customerCredentials.password) {
+                console.log('Customer login successful.');
+                window.location.href = 'customer-home.html'; // Redirect to customer home page
+            } else {
+                alert('Invalid customer credentials. Please try again.');
+            }
+        });
+    } else {
+        console.error('Customer login form not found.');
+    }
 
+    // Seller Login Form
+    const sellerLoginForm = document.getElementById('sellerLoginForm');
+    if (sellerLoginForm) {
+        sellerLoginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const username = document.getElementById('sellerUsername').value.trim();
+            const password = document.getElementById('sellerPassword').value.trim();
 
-        if (username === adminCredentials.username && password === adminCredentials.password) {
-            window.location.href = 'seller-home.html'; // Redirect to seller home page
-        } else if (username === customerCredentials.username && password === customerCredentials.password) {
-            window.location.href = 'customer-home.html'; // Redirect to customer home page
-        } else {
-            alert('Invalid username or password. Please try again.');
-        }
-    });
+            // Hardcoded seller credentials for demo purposes
+            const sellerCredentials = {
+                username: 'selleradmin',
+                password: 'sellerpass'
+            };
+
+            if (username === sellerCredentials.username && password === sellerCredentials.password) {
+                console.log('Seller login successful.');
+                window.location.href = 'seller-home.html'; // Redirect to seller home page
+            } else {
+                alert('Invalid seller credentials. Please try again.');
+            }
+        });
+    } else {
+        console.error('Seller login form not found.');
+    }
 });
