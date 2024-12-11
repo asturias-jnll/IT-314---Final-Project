@@ -104,3 +104,46 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #8d1942;
 }
+
+/* Login Choice Section */
+.login-choice {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.login-choice button {
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-choice button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* Login Forms */
+.login-forms {
+    
+    background-color: var(--bg-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--box-color);
+    width: 300px;
+    margin: 0 auto;
+}
+
+.login-forms h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Hidden Utility Class */
+.hidden {
+    display: none;
+}
